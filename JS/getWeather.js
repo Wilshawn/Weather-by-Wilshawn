@@ -31,3 +31,21 @@ function getWeatherByZip() {
     $('.weatherResponse').append("The weather in " + weatherName + "," + weatherCountry + " is " + weatherTemperature + " degrees and " + weatherDescription);
   }
 }
+
+$('#weatherSearch').click(function() {
+  if ($('#cityName').val() !== '' && $('#zipCode').val() !== '') {
+    $('#cityName').val('');
+    $('#zipCode').val('');
+    $('.weatherResponse').html('');
+    alert('Please select only one choice:  City Name or Zip Code.');
+  }
+  else if ($('#cityName').val() !== '') {
+    getWeatherByCity();
+  }
+  else if ($('#zipCode').val() !== '' ) {
+    getWeatherByZip();
+  }
+  else {
+    alert('Please fill out City Name or Zip Code.');
+  }
+});
