@@ -11,7 +11,9 @@ function getWeatherByCity() {
     var weatherCountry = weatherData.sys.country;
     var weatherDescription = weatherData.weather[0].description;
     var weatherTemperature = Math.round((weatherData.main.temp - 273.15) * 9/5 + 32);
-    $('.weatherResponse').append("The weather in " + weatherName + "," + weatherCountry + " is " + weatherTemperature + " degrees and " + weatherDescription);
+    var weatherIcon = weatherData.weather[0].icon;
+    var weatherIconUrl = "images/" + weatherIcon + ".png";
+    $('.weatherResponse').append("The weather in " + weatherName + "," + weatherCountry + " is " + weatherTemperature + " degrees and " + weatherDescription + "<img src='" + weatherIconUrl + "'>");
   }
 }
 
@@ -28,11 +30,13 @@ function getWeatherByZip() {
     var weatherCountry = weatherData.sys.country;
     var weatherDescription = weatherData.weather[0].description;
     var weatherTemperature = Math.round((weatherData.main.temp - 273.15) * 9/5 + 32);
-    $('.weatherResponse').append("The weather in " + weatherName + "," + weatherCountry + " is " + weatherTemperature + " degrees and " + weatherDescription);
+    var weatherIcon = weatherData.weather[0].icon;
+    var weatherIconUrl = "images/" + weatherIcon + ".png";
+    $('.weatherResponse').append("The weather in " + weatherName + "," + weatherCountry + " is " + weatherTemperature + " degrees and " + weatherDescription + "<img src='" + weatherIconUrl + "'>");
   }
 }
 
-$('#weatherSearch').click(function() {
+$('#weatherSubmit').click(function() {
   if ($('#cityName').val() !== '' && $('#zipCode').val() !== '') {
     $('#cityName').val('');
     $('#zipCode').val('');
