@@ -15,6 +15,7 @@ function getWeatherByCity() {
     var weatherIconUrl = "images/" + weatherIcon + ".png";
     $('.weatherResponse').append("The weather in " + weatherName + "," + weatherCountry + " is " + weatherTemperature + " degrees and " + weatherDescription + "<img src='" + weatherIconUrl + "'>");
   }
+  $('#cityName').val('');
 }
 
 function getWeatherByZip() {
@@ -34,6 +35,7 @@ function getWeatherByZip() {
     var weatherIconUrl = "images/" + weatherIcon + ".png";
     $('.weatherResponse').append("The weather in " + weatherName + "," + weatherCountry + " is " + weatherTemperature + " degrees and " + weatherDescription + "<img src='" + weatherIconUrl + "'>");
   }
+  $('#zipCode').val('');
 }
 
 $('#weatherSubmit').click(function() {
@@ -52,4 +54,10 @@ $('#weatherSubmit').click(function() {
   else {
     alert('Please fill out City Name or Zip Code.');
   }
+});
+
+$("#cityName,#zipCode").keyup(function(event){
+    if(event.keyCode == 13){
+        $('#weatherSubmit').click();
+    }
 });
