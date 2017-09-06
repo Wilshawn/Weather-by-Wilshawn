@@ -36,6 +36,7 @@ function getWeatherByZip() {
   $('#zipCode').val('');
 }
 
+/* Validation Error Prompts */
 $('#weatherSubmit').click(function() {
   if ($('#cityName').val() !== '' && $('#zipCode').val() !== '') {
     $('#cityName').val('');
@@ -54,14 +55,14 @@ $('#weatherSubmit').click(function() {
   }
 });
 
-// adds enter feature to submit button
+/* adds enter feature to submit button */
 $("#cityName,#zipCode").keyup(function(event){
     if(event.keyCode == 13){
         $('#weatherSubmit').click();
     }
 });
 
-// hide/show appropriate information when button is clicked
+/* hide/show appropriate information when button is clicked */
 $('#weatherHome').click(function(){
   $('header').hide('fast');
   $('.weatherSearch, .weatherImage, .weatherHeader').show('slow, swing');

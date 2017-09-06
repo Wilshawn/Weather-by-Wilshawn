@@ -14,6 +14,7 @@
 </head>
 <body>
   <div class="container">
+    <!-- Home Button -->
     <header>
         <img id="weatherHome" src="images/home.png" >
     </header>
@@ -21,14 +22,15 @@
     <div class="weatherImage">
       <img src="images/featured-image.png" alt="weather image" />
     </div>
+    <!-- Search Box -->
     <div class="weatherSearch">
       <input type="text" id="cityName" placeholder="City, St" >
       <div class="orSubmit">- or -</div>
       <input type="text" id="zipCode" placeholder="Zip Code">
       <button type="submit" id="weatherSubmit">Search</button>
     </div>
-  <div class="weatherResponse">
-    </div>
+    <!-- Weather Results -->
+    <div class="weatherResponse"></div>
     <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
     <script src="js/getWeather.js"></script>
   </div>
